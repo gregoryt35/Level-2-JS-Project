@@ -9,15 +9,34 @@
     <title>Match Game</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function flipCard() {
-            questionmark = document.querySelector('.front');
-            imageToChange = document.querySelector('.back');
-            if (questionmark == 'contents') {
-                questionmark.style.display = 'none';
-                imageToChange.style.display = 'contents';
-                console.log("image changed");
-            }
+        function initialize() {
             
+        }
+        function flipCard(id) {
+            if (id === 'banana1' || id === 'banana2') {
+                document.getElementById(id).src = "images/icons8-banana-80.png";
+            }
+            if (id === 'cheese1' || id === 'cheese2') {
+                document.getElementById(id).src = "images/icons8-cheese-80.png";
+            }
+            if (id === 'cherry1' || id === 'cherry2') {
+                document.getElementById(id).src = "images/icons8-cherry-80.png";
+            }
+            if (id === 'cookies1' || id === 'cookies2') {
+                document.getElementById(id).src = "images/icons8-cookies-80.png";
+            }
+            if (id === 'hamburger1' || id === 'hamburger2') {
+                document.getElementById(id).src = "images/icons8-hamburger-80.png";
+            }
+            if (id === 'meat1' || id === 'meat2') {
+                document.getElementById(id).src = "images/icons8-meat-80.png";
+            }
+            if (id === 'pineapple1' || id === 'pineapple2') {
+                document.getElementById(id).src = "images/icons8-pineapple-80.png";
+            }
+            if (id === 'pizza1' || id === 'pizza2') {
+                document.getElementById(id).src = "images/icons8-pizza-80.png";
+            }
         }
         function reset() {
 
@@ -25,183 +44,60 @@
     </script>
 </head>
 
-<body>
+<body onload="initialize();">
 
     <h1>Match Game</h1>
 
     <div class="grid">
-        <div id="banana" class="card" onclick="flipCard();">
-            <div class="face">
-                <div id="questionmark" class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-banana-80.png" alt="banana">
-                </div>
-            </div>
+        <div class="card">
+            <img id="banana1" src="images/icons8-question-mark-90.png" alt="banana" onclick="flipCard('banana1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <div id="cheese">
-                        <img src="images/icons8-cheese-80.png" alt="cheese">
-                    </div>
-                </div>
-            </div>
+            <img id="cheese1" src="images/icons8-question-mark-90.png" alt="cheese" onclick="flipCard('cheese1');">
+        </div>
+        <div class="card">    
+            <img id="cherry1" src="images/icons8-question-mark-90.png" alt="cherry" onclick="flipCard('cherry1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <div id="cherry">
-                        <img src="images/icons8-cherry-80.png" alt="cherry">
-                    </div>
-                </div>
-            </div>
+            <img id="cookies1" src="images/icons8-question-mark-90.png" alt="cookies" onclick="flipCard('cookies1');">
+        </div>
+        <div class="card">  
+            <img id="hamburger1" src="images/icons8-question-mark-90.png" alt="hamburger" onclick="flipCard('hamburger1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-cookies-80.png" alt="cookies">
-                </div>
-            </div>
+            <img id="meat1" src="images/icons8-question-mark-90.png" alt="meat" onclick="flipCard('meat1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-hamburger-80.png" alt="hamburger">
-                </div>
-            </div>
+            <img id="pineapple1" src="images/icons8-question-mark-90.png" alt="pineapple" onclick="flipCard('pineapple1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-meat-80.png" alt="meat">
-                </div>
-            </div>
+            <img id="pizza1" src="images/icons8-question-mark-90.png" alt="pizza" onclick="flipCard('pizza1');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-pineapple-80.png" alt="pineapple">
-                </div>
-            </div>
+            <img id="banana2" src="images/icons8-question-mark-90.png" alt="banana" onclick="flipCard('banana2');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-pizza-80.png" alt="pizza">
-                </div>
-            </div>
+            <img id="cheese2" src="images/icons8-question-mark-90.png" alt="cheese" onclick="flipCard('cheese2');">
+        </div>
+        <div class="card">    
+            <img id="cherry2" src="images/icons8-question-mark-90.png" alt="cherry" onclick="flipCard('cherry2');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <div id="banana">
-                        <img src="images/icons8-banana-80.png" alt="banana">
-                    </div>
-                </div>
-            </div>
+            <img id="cookies2" src="images/icons8-question-mark-90.png" alt="cookies" onclick="flipCard('cookies2');">
+        </div>
+        <div class="card">  
+            <img id="hamburger2" src="images/icons8-question-mark-90.png" alt="hamburger" onclick="flipCard('hamburger2');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <div id="cheese">
-                        <img src="images/icons8-cheese-80.png" alt="cheese">
-                    </div>
-                </div>
-            </div>
+            <img id="meat2" src="images/icons8-question-mark-90.png" alt="meat" onclick="flipCard('meat2');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <div id="cherry">
-                        <img src="images/icons8-cherry-80.png" alt="cherry">
-                    </div>
-                </div>
-            </div>
+            <img id="pineapple2" src="images/icons8-question-mark-90.png" alt="pineapple" onclick="flipCard('pineapple2');">
         </div>
         <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-cookies-80.png" alt="cookies">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-hamburger-80.png" alt="hamburger">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-meat-80.png" alt="meat">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-pineapple-80.png" alt="pineapple">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face">
-                <div class="front">
-                    <img src="images/icons8-question-mark-90.png" alt="questionmark" onclick="flipCard();">
-                </div>
-                <div class="back">
-                    <img src="images/icons8-pizza-80.png" alt="pizza">
-                </div>
-            </div>
+            <img id="pizza2" src="images/icons8-question-mark-90.png" alt="pizza" onclick="flipCard('pizza2');">
         </div>
 
-        <p><button style="align-items: center; cursor: pointer;" onclick="reset();">Reset Board</button></p>
     </div>
 </body>
 
