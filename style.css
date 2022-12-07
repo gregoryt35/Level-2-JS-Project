@@ -23,11 +23,16 @@ body {
     width: 100%;
     height: 100%;
     justify-content: center;
+<<<<<<< HEAD
+    align-items: center;
+=======
+>>>>>>> 9fd90427554e774c36433a124f47584d663ba226
     cursor: pointer;
     box-shadow: 0 5px 10px gray;
     border: 3px solid green;
     border-radius: 10px;
     transition: 0.3s all ease;
+<<<<<<< HEAD
 }
 
 .card img {
@@ -36,4 +41,28 @@ body {
 
 .card:hover {
     transform: scale(1.05);
+}
+
+h1, h2, h3, h4 {
+    color: darkcyan;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 10;
+}
+
+button {
+    border: 2px solid green;
+    border-radius: 15px;
+    color: darkcyan;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+=======
+}
+
+.card img {
+    opacity: 100;
+}
+
+.card:hover {
+    transform: scale(1.05);
+>>>>>>> 9fd90427554e774c36433a124f47584d663ba226
 }

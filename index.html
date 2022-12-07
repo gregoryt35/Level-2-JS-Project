@@ -10,35 +10,78 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function initialize() {
-            
+            totalFlips = 0;
+            currentFlips = 0;
+            totalMatches = 0;
+            lastId = '';
         }
         function flipCard(id) {
-            if (id === 'banana1' || id === 'banana2') {
-                document.getElementById(id).src = "images/icons8-banana-80.png";
-            }
-            if (id === 'cheese1' || id === 'cheese2') {
-                document.getElementById(id).src = "images/icons8-cheese-80.png";
-            }
-            if (id === 'cherry1' || id === 'cherry2') {
-                document.getElementById(id).src = "images/icons8-cherry-80.png";
-            }
-            if (id === 'cookies1' || id === 'cookies2') {
-                document.getElementById(id).src = "images/icons8-cookies-80.png";
-            }
-            if (id === 'hamburger1' || id === 'hamburger2') {
-                document.getElementById(id).src = "images/icons8-hamburger-80.png";
-            }
-            if (id === 'meat1' || id === 'meat2') {
-                document.getElementById(id).src = "images/icons8-meat-80.png";
-            }
-            if (id === 'pineapple1' || id === 'pineapple2') {
-                document.getElementById(id).src = "images/icons8-pineapple-80.png";
-            }
-            if (id === 'pizza1' || id === 'pizza2') {
-                document.getElementById(id).src = "images/icons8-pizza-80.png";
-            }
+            
+            if (totalMatches < 8) {
+                if (id === 'banana1' || id === 'banana2') {
+                    document.getElementById(id).src = "images/icons8-banana-80.png";
+                    totalFlips++;
+                }
+                if (id === 'cheese1' || id === 'cheese2') {
+                    document.getElementById(id).src = "images/icons8-cheese-80.png";
+                    totalFlips++;
+                }
+                if (id === 'cherry1' || id === 'cherry2') {
+                    document.getElementById(id).src = "images/icons8-cherry-80.png";
+                    totalFlips++;
+                }
+                if (id === 'cookies1' || id === 'cookies2') {
+                    document.getElementById(id).src = "images/icons8-cookies-80.png";
+                    totalFlips++;
+                }
+                if (id === 'hamburger1' || id === 'hamburger2') {
+                    document.getElementById(id).src = "images/icons8-hamburger-80.png";
+                    totalFlips++;
+                }
+                if (id === 'meat1' || id === 'meat2') {
+                    document.getElementById(id).src = "images/icons8-meat-80.png";
+                    totalFlips++;
+                }
+                if (id === 'pineapple1' || id === 'pineapple2') {
+                    document.getElementById(id).src = "images/icons8-pineapple-80.png";
+                    totalFlips++;
+                }
+                if (id === 'pizza1' || id === 'pizza2') {
+                    document.getElementById(id).src = "images/icons8-pizza-80.png";
+                    totalFlips++;
+                }
+
+                currentFlips++;
+
+                if (currentFlips === 1) {
+                    lastId = id;
+                }
+
+                if (currentFlips === 2) {
+                    if (document.getElementById(lastId).src === document.getElementById(id).src) {
+                        totalMatches++;
+                    }
+                    else {
+                        document.getElementById(lastId).src = "images/icons8-question-mark-90.png";
+                        document.getElementById(id).src = "images/icons8-question-mark-90.png";
+                    }
+                    currentFlips = 0;
+                }
+
+                if (totalMatches === 8) {
+                    document.getElementById("win").innerHTML = "You Win!";
+                }
+
+                display();
+
+            }   
+
+        }
+        function display() {
+            document.getElementById("flips").innerHTML = "Flips: " + totalFlips;
         }
         function reset() {
+            totalFlips = 0;
 
         }
     </script>
@@ -97,8 +140,14 @@
         <div class="card">
             <img id="pizza2" src="images/icons8-question-mark-90.png" alt="pizza" onclick="flipCard('pizza2');">
         </div>
-
+        <h3 id="flips">Flips: 0</h3>
+        <div></div>
+        <div></div>
+        <button onclick="reset();">Reset Board</button>
     </div>
+
+    <h2 id="win"></h2>
+
 </body>
 
 </html>
